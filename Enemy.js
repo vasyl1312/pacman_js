@@ -77,6 +77,7 @@ function Enemy(r, c) {
         n.f = n.cost + n.heuristic
       }
     }
+
     while (currentCell) {
       path.unshift(currentCell)
       currentCell = currentCell.parent

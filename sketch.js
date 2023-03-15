@@ -22,7 +22,7 @@ function setup() {
   cols = floor(width / size)
   rows = floor(height / size)
 
-  //кольори для привидів поля і гравця
+  //кольори для привидів, поля і гравця
   if (pacman) {
     theme = {
       background: color(0),
@@ -49,7 +49,7 @@ function setup() {
   goal = grid[grid.length - 1]
   maze(true) //генерація лабіринту щоб не було замкнутих кімнат
   if (!mazeMap) {
-    randomMap(true)
+    randomMap(true) //щоразу нова мапа
   }
 
   enemy = new Enemy(0, 0) //створюємо привидів і гравця
@@ -80,7 +80,7 @@ function draw() {
   }
 
   for (const cell of grid) {
-    cell.show(size / 4, theme.walls) //виводимо монети якщо вільна комiрка
+    cell.show(size / 4, theme.walls)
   }
 
   for (const cell of grid) {
@@ -146,9 +146,7 @@ function draw() {
 
 //для керування пакменом по клавіатурі
 function keyPressed() {
-  // console.log(keyCode);
   if (keyCode === ESCAPE) {
-    // console.log('yes')
     noLoop()
   } else {
     if (keyCode === LEFT_ARROW) {
